@@ -9,9 +9,8 @@ function Start-Traversal{
 param( 
  $arr
 )
-[string]$cast = $arr
 Write-Host "in start-traversal"
-Detail-ChildProcess($cast)
+Detail-ChildProcess($arr)
  
 }	 
 function Detail-ChildProcess{
