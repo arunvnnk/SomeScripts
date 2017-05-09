@@ -8,12 +8,12 @@ param(
  $arr
 )
 Write-Host "in start-traversal"
-($arr).gettype()
 Detail-ChildProcess($arr)
  
 }	 
 function Detail-ChildProcess{
 param($ID)
+Start-Sleep -s 2
 Get-WmiObject -Class Win32_Process -Filter "ParentProcessID=$ID" |  Select-Object -Property ProcessName,ProcessID,CommandLine 
 $childprocesses=Get-WmiObject -Class Win32_Process -Filter "ParentProcessID=$ID" |  Select-Object -Property ProcessName,ProcessID,CommandLine | foreach {$_.ProcessID}
 foreach ($element in $childprocesses){Detail-ChildProcess $element}
@@ -27,8 +27,7 @@ try {
      
 	 $test=(Get-Event -SourceIdentifier winword -ErrorAction Stop).SourceEventArgs.newevent | foreach {$_.ProcessID} 
 	 Write-Host "Detected MSWORD Procid ", $test
-	 ($test).gettype()
-  	 Start-Traversal($test)
+	 Start-Traversal($test)
 	 $flag=1
 	 Get-Event | Remove-Event
     }
