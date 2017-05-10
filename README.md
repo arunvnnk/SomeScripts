@@ -1,1 +1,1 @@
-Just some scripts that I am writing nothing special. The first one is a login automator for a Fortinet internet Firewall. The second one is a Powershell attack surface monitor to log child processes spawned by MSWORD.
+Just some scripts that I am writing nothing special. The first one is a login automator for a Fortinet internet Firewall. The second one is a Powershell based attack surface monitor to log child processes spawned by MSWORD.Plan to work on more features for the second one.
