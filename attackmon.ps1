@@ -33,11 +33,10 @@ try {
     }
 catch
     { 
-	  if ($flag -eq 1) 
-      {
+	  if ($flag -eq 1) {
 	   Write-Host "Waiting for events"
 	   $flag=0
-	  }
+      }
 	  
     }
 	  
